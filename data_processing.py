@@ -102,10 +102,7 @@ def get_metrics_for_date(df_raw, top_300, target_date):
     # Intentar cargar Ranking.csv para Director y Vendedor
     try:
         import os
-        ranking_path_root = os.path.join('Reportes_Individuales_CSV', 'Ranking.csv')
-        ranking_path_webapp = os.path.join('webapp', 'Reportes_Individuales_CSV', 'Ranking.csv')
-        
-        ranking_path = ranking_path_root if os.path.exists(ranking_path_root) else ranking_path_webapp
+        ranking_path = os.path.join('webapp', 'Reportes_Individuales_CSV', 'Ranking.csv')
         
         if os.path.exists(ranking_path):
             df_ranking = pd.read_csv(ranking_path, encoding='utf-8')
